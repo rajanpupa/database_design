@@ -1,0 +1,49 @@
+Write an ecommerce application (a shopping cart).
+Requirements
+	User should be able to visit the page and see different information about the shop
+	should find categories, sub-categories,products
+	find the products, their information, price, description, unit
+	add the product to their cart
+	browse other product and add them too in his/her cart,
+	click "place order" button option,
+		provide his information (name*, email, address*, phone_number*)
+
+##proposed database schema design##
+##shopping cart
+//items prefix -> itm
+	01.	categories
+			(id{_}, name, parent_id{null},description, visibility{true})
+	02.	products
+			(id{_}, category_id, name, description, unit, visibility{true})
+
+//users prefix -> usr
+	03.	users
+			(id{_}, username[unique], password, email)
+	04.	profiles
+			(id{_}, user_id[fk], first_name, last_name, dob, gender, work, marital_status, about, created_date, updated_date)
+	05.	addresses
+			(id{_}, user_id, country, state, city, street, description)
+	06.	phone_numbers
+			(id, user_id, number_type, phone_number)
+	07.	roles [seed]
+			(id, name)
+	08.	user_role
+			(id, user_id, role_id)
+	
+
+//orders prefix-> odr
+	09.	odr_carts
+			(id, session_id, user_id, product_id, amount, cart_time)
+	10.	odr_orders
+			(id, user_id, order_time)
+	11.	odr_order_list
+			(id, order_id, product_id, units, order_status_id)
+	12.	odr_order_statuses [seed]
+			(id, name, description) {0->ordered, 1->cleared, 2->undelivered, 3->returned, 4->looted}
+
+//accounts
+	13.	
+
+#conventions
+	user prefix _sd for seed tables,
+	
