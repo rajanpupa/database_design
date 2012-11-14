@@ -1,0 +1,19 @@
+//TO USE THIS CODE
+
+class someclass{
+	public $some_variable=array();
+	public $another_variable ;
+	
+	public function get_data(){
+		//create new database object
+		$db = new Database();
+		$sql = "some sql";
+		//call the appropriate method to query
+		$result = $db->execute_query_return_result();
+			//iterate through the result
+			while($row = mysql_fetch_array($result) ){
+				$some_variable[$row['id']] = $row['description']; 
+			}
+		return $result;
+	}
+}

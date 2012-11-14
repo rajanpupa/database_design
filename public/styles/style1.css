@@ -1,0 +1,10 @@
+*{margin:0px; padding:0px;}
+a{margin-left: 10px; text-decoration: none; text-indent: 5; list-style-type: none;}
+li{text-decoration: none; list-style: none;}
+body{background-color: #aabbaa;}
+#wrapper{margin:0 auto; padding 1px; background-color: white; width:70em;}
+#header img{width:100%; height: 12em;}
+#navigation li{margin-left: 5px;display: inline;}
+#navigation li a{text-decoration: none; background-color: #ede; color: #353;}
+#content{margin:10px 5px; padding:0; min-height: 10em;}
+#footer{margin:0 auto; min-height: 5em;background-color: #575; vertical-align: middle;text-align: center;}
